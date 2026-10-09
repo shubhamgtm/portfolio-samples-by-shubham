@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111113">
+    <title>Shubham Gautam | Developer</title>
+    <meta name="description" content="Shubham Gautam: Python and JavaScript developer building websites, Discord bots and Telegram bots.">
+
+    <style>
+        :root {
+            --bg: #111113;
+            --card: #18181b;
+            --text: #fafafa;
+            --muted: #a1a1aa;
+            --accent: #ff7a1a;
+            --border: #27272a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 56px 18px 40px;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        main { width: min(420px, 100%); text-align: center; }
+
+        .avatar {
+            width: 104px;
+            height: 104px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            padding: 3px;
+            background: var(--bg);
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+
+        h1 { font-size: 1.7rem; margin-top: 16px; letter-spacing: -0.5px; }
+        .role { color: var(--accent); font-size: 0.95rem; font-weight: 600; }
+        .bio { color: var(--muted); margin: 14px auto 0; max-width: 380px; font-size: 0.95rem; }
+
+        .chips {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 30px;
+        }
+        .chips span {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 5px 14px;
+            font-size: 0.82rem;
+            color: #d4d4d8;
+        }
+
+        .links { display: grid; gap: 12px; }
+
+        .link {
+            display: block;
+            padding: 15px;
+            border-radius: 14px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            font-weight: 600;
+            transition: transform .2s, border-color .2s;
+        }
+        .link:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+        .link.main { background: var(--accent); border-color: var(--accent); color: #1a0d03; }
+
+        footer { margin-top: 36px; color: #71717a; font-size: 0.78rem; }
+    </style>
+</head>
+
+<body>
+    <main>
+        <img class="avatar" src="https://cdn.pfps.gg/pfps/1147-pain.png" alt="Profile picture" width="104" height="104">
+
+        <h1>ꜱʜᴜʙʜᴀᴍ ɢᴀᴜᴛᴀᴍ</h1>
+        <p class="role">Developer · Bot Builder</p>
+        <p class="bio">I write Python and JavaScript to build websites, Discord bots and Telegram bots. I like turning ideas into tools people actually use.</p>
+
+        <div class="chips">
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>Web Dev</span>
+            <span>Discord Bots</span>
+            <span>Telegram Bots</span>
+        </div>
+
+        <div class="links">
+            <a class="link main" href="https://www.instagram.com/_dev.shubham/" target="_blank" rel="noopener noreferrer">Work with me on Instagram</a>
+            <a class="link" href="https://t.me/fwnixx" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a class="link" href="https://github.com/shubhamgtm" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="link" href="https://www.linkedin.com/in/shubham-gautam-upadhyaya-49a9003b3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <footer>© <span id="year"></span> Shubham Gautam</footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Basic deterrents against inspecting / copying the page
+        document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+        document.addEventListener("dragstart", function (e) { e.preventDefault(); });
+        document.addEventListener("keydown", function (e) {
+            var k = e.key.toLowerCase();
+            var ctrl = e.ctrlKey || e.metaKey;
+            if (
+                e.key === "F12" ||
+                (ctrl && e.shiftKey && ["i", "j", "c", "k"].indexOf(k) !== -1) ||
+                (ctrl && ["u", "s"].indexOf(k) !== -1)
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
